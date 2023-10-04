@@ -1,0 +1,14 @@
+{
+  "name": "namsate-react",
+  "version": "1.0.0",
+  "description": "This is Namaste React Project",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Rakesh Budhlakoti",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  }
+}
