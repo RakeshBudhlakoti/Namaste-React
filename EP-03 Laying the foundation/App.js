@@ -1,10 +1,10 @@
 import React from "react"; 
 import ReactDOM from 'react-dom/client'; 
 
-// React Element
+//JSX Element
 
-const headings = React.createElement("H1", {id: "heading"},"Namaste React");
+const headingsJSX = <h1 id="heading">Namaste React from JSX</h1>;
 
 const root= ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(headings);
+root.render(headingsJSX);
