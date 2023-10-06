@@ -24,6 +24,7 @@ const HeadingComponent = () => {
       <h2>{number}</h2>
       <h3>{title2}</h3>
       <Title />
+      {Title()}
       <h1 id="heading" className="heading" tabIndex="1">
         Functional Component
       </h1>
