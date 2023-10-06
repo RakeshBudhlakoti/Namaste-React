@@ -1,10 +1,22 @@
-import React from "react"; 
-import ReactDOM from 'react-dom/client'; 
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-//JSX Element
+// React Component
+// Class based component : OLD Way to writing code
+// Function based component : New way to writing code
 
-const headingsJSX = <h1 id="heading">Namaste React from JSX</h1>;
+// React Function based component :
 
-const root= ReactDOM.createRoot(document.getElementById("root"));
+const HeadingComponent = () => {
+  return (
+    <div id="container">
+      <h1 id="heading" className="heading" tabIndex="1">
+        Namaste React from JSX Component
+      </h1>
+    </div>
+  );
+};
 
-root.render(headingsJSX);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<HeadingComponent />);
