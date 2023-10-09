@@ -1,7 +1,10 @@
 import RestaurantCard from "./RestaurantCard";
 import data from "../utils/resData";
+import { useState } from "react";
 
 const Body = () => {
+  //Local State Variables
+  const [listOfRestaurants, setListOfRestaurants] = useState(data);
   return (
     <div className="body">
       <div className="container">
@@ -10,10 +13,25 @@ const Body = () => {
             <div className="Search">
               <input type="text" placeholder="Search" />
             </div>
+            <div className="filter">
+              <button
+                type="button"
+                className="btn btn-info filter-btn"
+                onClick={() => {
+                  const filteredList = listOfRestaurants.filter(
+                    (res) => res.info.avgRating >= 4
+                  );
+                  setListOfRestaurants(filteredList);
+                }}
+              >
+                Top Rated Restaurants
+              </button>
+            </div>
+
             <div className="res-container">
               <div className="res-header">Restaurant List</div>
               <div className="res-body">
-                {data.map((restaurant) => (
+                {listOfRestaurants.map((restaurant) => (
                   <RestaurantCard
                     key={restaurant.info.id}
                     resData={restaurant}
