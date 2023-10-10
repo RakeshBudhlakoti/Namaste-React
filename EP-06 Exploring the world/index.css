@@ -58,3 +58,13 @@
     text-align: center;
    
 }
+.shimmerContainer{
+  display: flex;
+  flex-wrap: wrap;
+}
+.shimmer-card{
+  width: 20%;
+  height: 400px;
+  background-color: #f0f0f0;
+  margin: 20px;;
+}
