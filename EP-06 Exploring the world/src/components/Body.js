@@ -19,50 +19,54 @@ const Body = () => {
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
-  if (listOfRestaurants.length === 0) {
-    return <Shimmer />;
-  } else {
-    return (
-      <div className="body">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <div className="Search">
-                <input type="text" placeholder="Search" />
-              </div>
-              <div className="filter">
-                <button
-                  type="button"
-                  className="btn btn-info filter-btn"
-                  onClick={() => {
-                    const filteredList = listOfRestaurants.filter(
-                      (res) => res.info.avgRating >= 4
-                    );
-                    setListOfRestaurants(filteredList);
-                  }}
-                >
-                  Top Rated Restaurants
-                </button>
-              </div>
+  //Conditional Rendering
+  return (
+    <div className="body">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+          <div className="res-header">Restaurant List</div>
+            <div className="Search">
+              <input type="text" placeholder="Search" />
+            </div>
+            <div className="filter">
+              <button
+                type="button"
+                className="btn btn-info filter-btn"
+                onClick={() => {
+                  const filteredList = listOfRestaurants.filter(
+                    (res) => res.info.avgRating >= 4
+                  );
+                  setListOfRestaurants(filteredList);
+                }}
+              >
+                Top Rated Restaurants
+              </button>
+            </div>
 
-              <div className="res-container">
-                <div className="res-header">Restaurant List</div>
-                <div className="res-body">
-                  {listOfRestaurants.map((restaurant) => (
-                    <RestaurantCard
-                      key={restaurant.info.id}
-                      resData={restaurant}
-                    />
-                  ))}
-                </div>
-                <div className="res-footer"></div>
+            <div className="res-container">
+           { 
+           listOfRestaurants.length === 0 ? (
+                          <Shimmer />
+                ) : (
+             
+              <div className="res-body">
+                {listOfRestaurants.map((restaurant) => (
+                  <RestaurantCard
+                    key={restaurant.info.id}
+                    resData={restaurant}
+                  />
+                ))}
               </div>
+                )
+}
+              <div className="res-footer"></div>
             </div>
           </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 };
 
 export default Body;
