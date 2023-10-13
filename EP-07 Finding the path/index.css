@@ -417,3 +417,137 @@ body, ul {
 .error-page a:hover {
   text-decoration: underline;
 }
+
+
+/******************************** restaurant menu page ********************************/
+/* Styles for the overall restaurant page */
+
+
+/* Styles for the overall restaurant page */
+.restaurant-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+}
+
+/* Styles for the restaurant info section */
+.restaurant-page .restaurant-info {
+  display: flex;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.restaurant-page .restaurant-image {
+  flex: 1;
+  /* max-width: 150px; */
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.restaurant-page .restaurant-details {
+  flex: 2;
+  text-align: left;
+}
+
+/* Rest of the CSS for restaurant details and menu stays the same */
+
+
+.restaurant-page .restaurant-name {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.restaurant-page .restaurant-rating,
+.restaurant-page .restaurant-ratings,
+.restaurant-page .restaurant-delivery-time,
+.restaurant-page .restaurant-cuisines,
+.restaurant-page .restaurant-cost,
+.restaurant-page .restaurant-address,
+.restaurant-page .restaurant-phone,
+.restaurant-page .restaurant-hours {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+/* Styles for the restaurant menu section */
+.restaurant-page .restaurant-menu {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+}
+
+.restaurant-image img {
+  height: 230px;
+}
+.restaurant-page .menu-heading {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.restaurant-page .menu-list {
+  list-style: none;
+  padding: 0;
+}
+
+.restaurant-page .menu-item {
+  display: flex;
+  margin: 10px 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f9f9f9;
+}
+
+.restaurant-page .menu-item-image {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+  border-radius: 8px 0 0 8px;
+}
+
+.restaurant-page .menu-item-details {
+  flex: 1;
+  padding: 10px;
+  text-align: left;
+  margin-left: 14px;
+}
+
+.restaurant-page .item-name {
+  font-size: 18px;
+  margin: 0;
+}
+
+.restaurant-page .item-description {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.restaurant-page .item-price {
+  font-size: 16px;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #ff5733;
+}
+/********************************************************/
+.orderNow-button {
+  text-align: center;
+  margin: 13px 0px;
+}
+.orderNow-button button {
+  color: #fff;
+  cursor: pointer;
+  background-color: #fc6730;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 18px;
+}
