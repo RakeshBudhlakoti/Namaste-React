@@ -268,3 +268,152 @@ body, ul {
   text-decoration: underline;
 }
 
+/******************************** About Us CSS ********************************/
+
+/* About Us Container */
+.about-us-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Heading Styles */
+.about-us-container h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Paragraph Styles */
+.about-us-container p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/******************************** Contact Us page ********************************/
+
+/* Page container */
+.food-delivery-page {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+.food-delivery-page .header {
+  text-align: center;
+}
+
+/* Restaurant Card */
+.food-delivery-page .restaurant-card {
+  display: flex;
+  margin: 20px 0;
+}
+
+.food-delivery-page .restaurant-image {
+  width: 200px;
+  height: 150px;
+
+  border: 1px solid #ddd;
+  object-fit: scale-down;
+}
+
+.food-delivery-page .restaurant-details {
+  margin-left: 20px;
+}
+
+/* Restaurant Menu */
+.food-delivery-page .restaurant-menu {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+.food-delivery-page .restaurant-menu h3 {
+  font-weight: bold;
+}
+
+.food-delivery-page .restaurant-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.food-delivery-page .restaurant-menu li {
+  padding: 5px 0;
+}
+
+/* Order Button */
+.food-delivery-page .order-button {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.food-delivery-page button {
+  background-color: #ff5733;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.food-delivery-page button:hover {
+  background-color: #ff834f;
+}
+
+/* Footer */
+.food-delivery-page .footer {
+  text-align: center;
+  color: #777;
+  padding: 20px 0;
+}
+
+/******************************** Error Page ********************************/
+
+/* Error Page Container */
+.error-page {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* Error Content */
+.error-page .error-content {
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Error Heading */
+.error-page h1 {
+  color: #ff5733;
+  font-size: 36px;
+}
+
+/* Error Message */
+.error-page p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+/* Error Message Link */
+.error-page a {
+  text-decoration: none;
+  color: #ff5733;
+  font-weight: bold;
+}
+
+.error-page a:hover {
+  text-decoration: underline;
+}
