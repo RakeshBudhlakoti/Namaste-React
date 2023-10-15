@@ -3,11 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 function Header() {
-  const [btnNameReact, setBtnNameReact] = useState('Login');
-
-  useEffect(() =>{
-    console.log('useEffect Called')
-  })
+  const [btnNameReact, setBtnNameReact] = useState('Login'); 
 
   const handleLoginClick = () => {
     setBtnNameReact(btnNameReact === 'Login' ? 'Logout' : 'Login');
