@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams, Link } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
-import vegImage from '../images/veg.jpeg';
-import nonVegImage from '../images/non-veg.jpeg';
+import vegImage from "../images/veg.jpeg";
+import nonVegImage from "../images/non-veg.jpeg";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -17,8 +17,10 @@ const RestaurantMenu = () => {
   useEffect(() => {
     if (resInfo) {
       const itemCardsData =
-        resInfo.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card.itemCards ||
-        resInfo.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card.itemCards;
+        resInfo.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+          ?.card.itemCards ||
+        resInfo.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
+          ?.card.itemCards;
       setItemCards(itemCardsData);
       setItemCardsFiltered(itemCardsData);
     }
@@ -27,10 +29,14 @@ const RestaurantMenu = () => {
   const handleToggle = (newFilter) => {
     setFilter(newFilter);
 
-    if (newFilter === 'veg') {
-      setItemCardsFiltered(itemCards.filter((item) => item.card.info.isVeg === 1));
-    } else if (newFilter === 'non-veg') {
-      setItemCardsFiltered(itemCards.filter((item) => item.card.info.isVeg !== 1));
+    if (newFilter === "veg") {
+      setItemCardsFiltered(
+        itemCards.filter((item) => item.card.info.isVeg === 1)
+      );
+    } else if (newFilter === "non-veg") {
+      setItemCardsFiltered(
+        itemCards.filter((item) => item.card.info.isVeg !== 1)
+      );
     } else {
       setItemCardsFiltered(itemCards);
     }
@@ -86,25 +92,27 @@ const RestaurantMenu = () => {
       <div className="restaurant-menu">
         <h2 className="menu-heading">Menu</h2>
         <div className="toggle-buttons">
-      <button
-        className={`toggle-button ${filter === "all" ? "selected" : ""}`}
-        onClick={() => handleToggle("all")}
-      >
-        All
-      </button>
-      <button
-        className={`toggle-button ${filter === "veg" ? "selected" : ""}`}
-        onClick={() => handleToggle("veg")}
-      >
-        Veg
-      </button>
-      <button
-        className={`toggle-button ${filter === "non-veg" ? "selected" : ""}`}
-        onClick={() => handleToggle("non-veg")}
-      >
-        Non-Veg
-      </button>
-    </div>
+          <button
+            className={`toggle-button ${filter === "all" ? "selected" : ""}`}
+            onClick={() => handleToggle("all")}
+          >
+            All
+          </button>
+          <button
+            className={`toggle-button ${filter === "veg" ? "selected" : ""}`}
+            onClick={() => handleToggle("veg")}
+          >
+            Veg
+          </button>
+          <button
+            className={`toggle-button ${
+              filter === "non-veg" ? "selected" : ""
+            }`}
+            onClick={() => handleToggle("non-veg")}
+          >
+            Non-Veg
+          </button>
+        </div>
         <ul className="menu-list">
           {itemCardsFiltered?.map((item) => (
             <li key={item.card.info.id} className="menu-item">
@@ -124,9 +132,11 @@ const RestaurantMenu = () => {
                 </span>
                 <p>
                   <span>
-                   
-                   {item.card.info.isVeg ?  <img className="veg-image" src={vegImage} alt=""/> :  <img className="nonveg-image" src={nonVegImage} alt=""/>}
-
+                    {item.card.info.isVeg ? (
+                      <img className="veg-image" src={vegImage} alt="" />
+                    ) : (
+                      <img className="nonveg-image" src={nonVegImage} alt="" />
+                    )}
                   </span>
                 </p>
               </div>
