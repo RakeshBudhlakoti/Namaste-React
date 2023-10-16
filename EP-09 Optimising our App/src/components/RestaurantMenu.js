@@ -5,7 +5,7 @@ import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
-  const resInfo = useRestaurantMenu(resId); // Custom hook Called
+  const resInfo = useRestaurantMenu(resId); // Custom hook for RestaurantMenu API calls
 
   if (resInfo === null) {
     return <Shimmer />;
