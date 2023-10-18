@@ -70,6 +70,29 @@ async componentDidMount() {
           </p>
           <h1>Team Members</h1>
         </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  <div className="p-4">
+                    <div className="bg-white rounded-lg shadow-md">
+                      <img
+                        src="restaurant-image.jpg"
+                        alt="Restaurant Image"
+                        className="w-full h-48 object-cover rounded-t-lg"
+                      />
+                      <div className="p-4">
+                        <h2 className="text-lg font-semibold">
+                          Restaurant Name
+                        </h2>
+                        <p className="text-gray-500">Price: $20</p>
+                        <div className="flex items-center">
+                          <span className="text-yellow-500">★ 4.5</span>
+                          <span className="text-gray-500 ml-2">
+                            (500+ ratings)
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
         <div className="team-cards-container">
           {teamMembers.map((member, index) => (
             <UserClass key={index} {...member} />

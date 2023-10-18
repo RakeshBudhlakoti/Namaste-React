@@ -79,7 +79,7 @@ const Body = () => {
               <div className="example">
                 <input
                   type="text"
-                  className="search-box"
+                  className="border"
                   value={searchText}
                   placeholder="Search Restaurants..."
                   onChange={(e) => {
@@ -87,25 +87,24 @@ const Body = () => {
                   }}
                   required
                 />
-                <button onClick={handleSearch}>
+                <button
+                  onClick={handleSearch}
+                  className="px-4 py-2 bg-green-100 m-4"
+                >
                   <i className="fa fa-search"></i> {/* Search icon */}
                 </button>
               </div>
             </div>
             <div className="filter">
-              <button
-                type="button"
-                className="btn btn-info filter-btn"
-                onClick={handleFilterRating}
-              >
+              <button type="button" onClick={handleFilterRating}>
                 Rating 4+
               </button>
             </div>
-            <div className="res-container">
+            <div className="">
               {listOfRestaurants.length === 0 ? (
                 <Shimmer /> /* Display a loading shimmer effect while fetching data */
               ) : (
-                <div className="res-body">
+                <div className=" flex flex-wrap">
                   {listOfFilteredRestaurants.map((restaurant) => (
                     <RestaurantCard
                       key={restaurant.info.id}
@@ -114,7 +113,9 @@ const Body = () => {
                   ))}
                 </div>
               )}
-              <div className="res-footer"></div>
+              <div className="res-footer">
+                
+              </div>
             </div>
           </div>
         </div>

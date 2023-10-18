@@ -13,35 +13,38 @@ function Header() {
   const onlineStatus = useOnlineStatus(); // Custom Hook for online status
 
   return (
-    <div className="header">
-      <div className="logo-container">
-        <img className="logo" src={LOGO_URL} alt="FoodVillage" />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>
-            Online Status:{onlineStatus ? <span>&#128994;</span> : <span>&#128308;</span>}
-          </li>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-          <li>
-            <Link to="/grocery">Grocery</Link>
-          </li>
-          <li>
-            <button className="login" onClick={handleLoginClick}>
-              {btnNameReact}
-            </button>
-          </li>
-        </ul>
-      </div>
+    <div className="bg-blue-500 p-4">
+  <div className="container mx-auto flex justify-between items-center">
+    <div className="logo-container">
+      <img className="w-40" src={LOGO_URL} alt="FoodVillage" />
     </div>
+    <div className="nav-items">
+      <ul className="flex space-x-6 text-white">
+        <li className="relative group">
+          <span className="online-status">
+            {onlineStatus ? <span>&#128994;</span> : <span>&#128308;</span>}
+          </span>
+          <Link to="/" className="nav-link group-hover:text-blue-300">Home</Link>
+        </li>
+        <li>
+          <Link to="/about" className="nav-link group-hover:text-blue-300">About</Link>
+        </li>
+        <li>
+          <Link to="/contact" className="nav-link group-hover:text-blue-300">Contact</Link>
+        </li>
+        <li>
+          <Link to="/grocery" className="nav-link group-hover:text-blue-300">Grocery</Link>
+        </li>
+      </ul>
+    </div>
+    <div className="login">
+      <button className="bg-white text-blue-500 hover:bg-blue-100 py-2 px-4 rounded-full" onClick={handleLoginClick}>
+        {btnNameReact}
+      </button>
+    </div>
+  </div>
+</div>
+
   );
 }
 

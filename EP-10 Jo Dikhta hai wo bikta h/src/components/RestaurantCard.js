@@ -22,11 +22,11 @@ const RestaurantCard = ({ resData }) => {
   const truncatedCuisines = cuisines.join(", ").substring(0, 20) + "...";
 
   return (
-    <div className="card">
+    <div className="m-4 p-4 w-[270px]">
       <Link to={"/restaurants/" + id}>
-        <div className="cardBody">
+        <div className="cardBody ">
           <img
-            className="cardImg"
+            className="cardImg h-36"
             src={`${CDN_URL}${cloudinaryImageId}`}
             alt="Restaurant Image"
           />
