@@ -32,6 +32,9 @@ function Header() {
             <Link to="/contact">Contact</Link>
           </li>
           <li>
+            <Link to="/grocery">Grocery</Link>
+          </li>
+          <li>
             <button className="login" onClick={handleLoginClick}>
               {btnNameReact}
             </button>
