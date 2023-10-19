@@ -13,15 +13,14 @@ function Header() {
   const onlineStatus = useOnlineStatus(); // Custom Hook for online status
 
   return (
+    
     <div className="header">
       <div className="logo-container">
         <img className="logo" src={LOGO_URL} alt="FoodVillage" />
       </div>
       <div className="nav-items">
         <ul>
-          <li>
-            Online Status:{onlineStatus ? <span>&#128994;</span> : <span>&#128308;</span>}
-          </li>
+
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -37,7 +36,7 @@ function Header() {
           <li>
             <button className="login" onClick={handleLoginClick}>
               {btnNameReact}
-            </button>
+            </button>{onlineStatus ? <span>&#128994;</span> : <span>&#128308;</span>}
           </li>
         </ul>
       </div>
