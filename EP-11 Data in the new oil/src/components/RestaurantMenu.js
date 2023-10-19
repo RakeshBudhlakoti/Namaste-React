@@ -26,7 +26,7 @@ const RestaurantMenu = () => {
       setItemCards(itemCardsData);
       setItemCardsFiltered(itemCardsData);
     }
-  }, [resInfo]);
+  },[]);
 
   const handleToggle = (newFilter) => {
     setFilter(newFilter);
