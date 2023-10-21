@@ -1,10 +1,11 @@
 import { RESTRA_CDN_URL } from "../../utils/constants";
 import vegImage from "../../images/veg.jpg";
 import nonVegImage from "../../images/non-veg.jpg";
+import defaultFood from "../../images/default-food.jpg";
 import { useState } from "react";
 
 const itemLists = ({ items }) => {
-//   console.log("items", items);
+   console.log("items", items);
   const [counters, setCounters] = useState({}); // Separate counts for each item
 
   const handleAddClick = (itemId) => {
@@ -80,11 +81,20 @@ const itemLists = ({ items }) => {
             </div>
 
             <div className="menu-item-count">
-              <img
+
+                {item.card.info.imageId ? ( <img
                 src={`${RESTRA_CDN_URL}${item.card.info.imageId}`}
                 alt={item.card.info.name}
                 className="menu-item-image"
-              />
+              />)
+                
+            : (<img
+                src={defaultFood}
+                alt={item.card.info.name}
+                className="menu-item-image"
+              />)
+            }
+             
               <div className="button-counter">
                 {!counters[item.card.info.id] ? (
                   <button onClick={() => handleAddClick(item.card.info.id)}>

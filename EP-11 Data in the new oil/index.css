@@ -545,9 +545,8 @@ ul {
 /* Styles for the restaurant menu section */
 .restaurant-page .restaurant-menu {
   background-color: #fff;
-  border: 1px solid #e0e0e0;
+  /* border: 1px solid #e0e0e0; */
   border-radius: 8px;
-  padding: 20px;
   width: 100%;
 }
 
@@ -1033,12 +1032,12 @@ span.allDescription {
   font-weight: bold;
 } */
 
-.accordion-content {
-  /* display: none; */
+/* .accordion-content {
+
   background-color: #fff;
   padding: 10px;
   border-top: 1px solid #ddd;
-}
+} */
 
 .accordion-content.active {
   display: block;
@@ -1083,14 +1082,14 @@ span.allDescription {
   line-height: 20px;
 }
 
-.accordion-content {
+/* .accordion-content {
   background-color: #fff;
   border: 1px solid #e9e9eb;
   box-shadow: 0 1px 5px #f9f9f9;
   border-radius: 6px;
   margin-top: 10px;
   padding: 10px;
-}
+} */
 
 /* Adjust styles as needed */
 
@@ -1098,13 +1097,12 @@ span.allDescription {
 /* ================================================================= Restaurant detail page */
 .restaurant-container {
   background-color: #fff;
-  border: 1px solid #e5e5e5;
+  border: 0px solid #e5e5e5;
   border-radius: 5px;
-  /* max-width: 400px; */
+  width: 100%;
   margin: 0 auto;
   padding: 20px;
-  box-shadow: 0 2px 4px #0000001a;
-  width: 100%;
+  /* box-shadow: 0 2px 4px #0000001a; */
 }
 
 .restaurant-header {
@@ -1234,3 +1232,38 @@ span.bestseller {
   margin-left: 6px;
 }
 
+/**************** Cart Bottom ********************************/
+/* 
+.menu-sticky-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.view-cart-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  width: 100%;
+}
+
+.cart-details-title {
+  font-weight: bold;
+}
+
+.cart-details-subtitle {
+  color: #666;
+}
+
+.view-cart {
+  display: flex;
+  align-items: center;
+}
+
+.view-cart-icon {
+  margin-left: 10px;
+} */

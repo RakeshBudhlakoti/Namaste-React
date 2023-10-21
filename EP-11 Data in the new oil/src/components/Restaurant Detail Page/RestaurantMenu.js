@@ -26,7 +26,7 @@ const RestaurantMenu = () => {
       setItemCardsFiltered(itemCardsData);
     }
   }, []);
-// console.log(resInfo);
+  // console.log(resInfo);
   const categories =
     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
       (c) =>
@@ -88,50 +88,66 @@ const RestaurantMenu = () => {
 
   return (
     <>
-    
-    
-    
-    
-    <div className="restaurant-page">
+      <div className="restaurant-page">
+        <div className="restaurant-container">
+          <div className="restaurant-header">
+            <div className="restaurant-image">
+              <img
+                src={`${CDN_URL}${restaurantData?.cloudinaryImageId}`}
+                alt={restaurantData?.name}
+              ></img>
+            </div>
+            <div className="restaurant-details">
+              <p className="restaurant-name">{restaurantData?.name}</p>
+              <p className="restaurant-cuisines">
+                {restaurantData?.cuisines?.join(", ")}
+              </p>
 
+              <p className="restaurant-area">
+                {restaurantData?.areaName},&nbsp;
+                {restaurantData?.sla.lastMileTravelString}
+              </p>
 
-    <div className="restaurant-container">
-      <div className="restaurant-header">
-
-
-        <div className="restaurant-image">
-          <img src={`${CDN_URL}${restaurantData?.cloudinaryImageId}`} alt={restaurantData?.name}></img>
+              <span className="restaurant-message-text">
+                <span className="deliveryImg">
+                  <img
+                    src={RESTRA_DETAIL_PAGE + restaurantData?.feeDetails.icon}
+                  />
+                </span>
+                {restaurantData?.feeDetails.message}
+              </span>
+            </div>
+            <div className="restaurant-ratings-box">
+              <div className="rating-divider">
+                <span className="restaurant-rating">
+                  <i className="fa fa-star"></i>&nbsp;
+                  {restaurantData?.avgRating}
+                </span>
+                <hr className="dotted-separator" />
+                <span className="restaurant-total-ratings">
+                  {restaurantData?.totalRatingsString}
+                </span>
+              </div>
+            </div>
           </div>
-        <div className="restaurant-details">
-          <p className="restaurant-name">{restaurantData?.name}</p>
-          <p className="restaurant-cuisines">{restaurantData?.cuisines?.join(", ")}</p>
-
-            <p className="restaurant-area">{restaurantData?.areaName},&nbsp;{restaurantData?.sla.lastMileTravelString}</p>
-
-            
-          <span className="restaurant-message-text"><span className="deliveryImg"><img src={RESTRA_DETAIL_PAGE+restaurantData?.feeDetails.icon} /></span>{restaurantData?.feeDetails.message}</span>
-        </div>
-        <div className="restaurant-ratings-box">
-        <div className="rating-divider">
-          <span className="restaurant-rating"><i className="fa fa-star"></i>&nbsp;{restaurantData?.avgRating}</span>
           <hr className="dotted-separator" />
-          <span className="restaurant-total-ratings">{restaurantData?.totalRatingsString}</span>
-        </div>
-      </div>
-      </div>
-      <hr className="dotted-separator" />
-      <div className="restaurant-time-cost">
-        <div className="time-icon">
-          <span><i className="fa fa-clock-o" aria-hidden="true"></i>&nbsp;{restaurantData?.sla.slaString}</span>
-        
-          <span><i className="fa fa-rupee-sign" aria-hidden="true"></i>&nbsp; {restaurantData?.costForTwoMessage}</span>
-        </div>
-      </div>
-    </div>
-    <div className="content-wrapper">
-        <div className="restaurant-menu">
+          <div className="restaurant-time-cost">
+            <div className="time-icon">
+              <span>
+                <i className="fa fa-clock-o" aria-hidden="true"></i>&nbsp;
+                {restaurantData?.sla.slaString}
+              </span>
 
-          {/* <div className="toggle-buttons">
+              <span>
+                <i className="fa fa-rupee-sign" aria-hidden="true"></i>&nbsp;{" "}
+                {restaurantData?.costForTwoMessage}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div className="content-wrapper">
+          <div className="restaurant-menu">
+            {/* <div className="toggle-buttons">
             <button
               className={`toggle-button ${filter === "all" ? "selected" : ""}`}
               onClick={() => handleToggle("all")}
@@ -157,18 +173,22 @@ const RestaurantMenu = () => {
             </button>
           </div> */}
 
-          {/* Categories Accordians */}
+            {/* Categories Accordians */}
 
-          <div className="App">
-            {categories.map((category,index) => {
-              return (
-                <RestaurantCategory key={index} accOpen={index==0?true:false} data={category?.card?.card}/>
-              );
-            })}
+            <div className="App">
+              {categories.map((category, index) => {
+                return (
+                  <RestaurantCategory
+                    key={index}
+                    accOpen={index == 0 ? true : false}
+                    data={category?.card?.card}
+                  />
+                );
+              })}
+            </div>
           </div>
-        </div>
 
-        {/* <div className="cart-sidebar">
+          {/* <div className="cart-sidebar">
           <div className="cart-header">
             <h2>Your Cart</h2>
             <button className="close-button">&times;</button>
@@ -197,8 +217,34 @@ const RestaurantMenu = () => {
             <h3>Go To Cart</h3>
           </div>
         </div> */}
+        </div>
+        {/* <div className="restaurant-cart-fixed">
+          <div className="menu-sticky-bottom">
+            <button
+              className="view-cart-button"
+              data-testid="menu-view-cart-footer"
+              aria-label="Cart details: 2 Items present, total: ₹1599. Double tap to go to Cart Page."
+              id="view-cart-btn"
+            >
+              <div className="cart-details">
+                <span className="cart-details-title">2 Items | ₹1599</span>
+                <span className="cart-details-subtitle"></span>
+              </div>
+              <div className="view-cart">
+                <span>View Cart</span>
+                <img
+                  alt="Cart Icon"
+                  className="view-cart-icon"
+                  height="14"
+                  loading="lazy"
+                  width="14"
+                  src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_28,h_28/ChatbotAssets/Checkout_Cart"
+                />
+              </div>
+            </button>
+          </div>
+        </div> */}
       </div>
-    </div>
     </>
   );
 };
