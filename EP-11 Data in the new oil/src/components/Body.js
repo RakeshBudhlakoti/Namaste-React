@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-import { RESTRA_LIST_URL } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import BestOfferSection from "./home/BestOfferSection";
 import useRestaurantList from "../utils/useRestaurantList";
