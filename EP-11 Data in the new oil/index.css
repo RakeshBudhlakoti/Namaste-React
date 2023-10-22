@@ -564,13 +564,11 @@ ul {
 }
 
 .restaurant-page .menu-item {
-  /* background-color: #f9f9f9; */
   border-bottom: 1px solid #e0e0e0;
-  /* border-radius: 8px; */
-  margin: 2px 0px;
+  margin: 2px 0;
+  padding: 8px 0px 11px 0px;
   display: flex;
   overflow: hidden;
-  padding: 3px 3px 7px 2px;
 }
 
 .restaurant-page .menu-item-image {
@@ -593,13 +591,14 @@ ul {
   width: 124px;
 }
 .restaurant-page .item-name {
-  margin: 8px 0px;
-  font-size: 16px;
+  margin: 8px 0;
+  font-size: 18px;
 }
 
 .restaurant-page .item-description {
-  margin: 4px 0;
-  font-size: 11px;
+  margin: 8px 0;
+  font-size: 14px;
+  color: gray;
 }
 
 .menu-item-details p {
@@ -609,7 +608,7 @@ ul {
 .restaurant-page .item-price {
   color: #ff5733;
   margin: 10px 0;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 900;
 }
 /********************************************************/
@@ -1057,39 +1056,9 @@ span.allDescription {
   font-weight: bold;
 }
 
-.accordion-icon {
-  width: 20px;
-  height: 20px;
-  background-color: #3d9b6d;
-  border-radius: 50%;
+.accordion-button span {
+  font-size: 30px;
 }
-
-.accordion-icon.open::before {
-  content: "-";
-  display: block;
-  font-size: 18px;
-  color: #fff;
-  text-align: center;
-  line-height: 20px;
-}
-
-.accordion-icon.close::before {
-  content: "+";
-  display: block;
-  font-size: 18px;
-  color: #fff;
-  text-align: center;
-  line-height: 20px;
-}
-
-/* .accordion-content {
-  background-color: #fff;
-  border: 1px solid #e9e9eb;
-  box-shadow: 0 1px 5px #f9f9f9;
-  border-radius: 6px;
-  margin-top: 10px;
-  padding: 10px;
-} */
 
 /* Adjust styles as needed */
 
