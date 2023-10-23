@@ -3,10 +3,7 @@ import { useParams } from "react-router-dom";
 import Shimmer from "../Shimmer";
 import RestaurantCategory from "./RestaurantCategory";
 import useRestaurantMenu from "../../utils/useRestaurantMenu";
-import {
-  CDN_URL,
-  RESTRA_DETAIL_PAGE,
-} from "../../utils/constants";
+import {CDN_URL,RESTRA_DETAIL_PAGE} from "../../utils/constants";
 
 const RestaurantMenu = () => {
   // Get the restaurant ID from the URL
@@ -17,10 +14,9 @@ const RestaurantMenu = () => {
   // State to store filtered item cards, filter, and counters for items
   const [itemCardsFiltered, setItemCardsFiltered] = useState([]);
   const [filter, setFilter] = useState("all");
-  const [counters, setCounters] = useState({});
 
   // State to manage the open category in the accordion
-  const [openCategoryIndex, setOpenCategoryIndex] = useState(-1);
+  const [openCategoryIndex, setOpenCategoryIndex] = useState(0);
 
   // Function to toggle the open category in the accordion
   const toggleAccordion = (index) => {
@@ -43,34 +39,16 @@ const RestaurantMenu = () => {
   );
 
   // Function to handle filter selection
-  const handleToggle = (newFilter) => {
-    setFilter(newFilter);
+  // const handleToggle = (newFilter) => {
+  //   setFilter(newFilter);
 
-    if (newFilter === "veg") {
-      setItemCardsFiltered(itemCardsFiltered.filter((item) => item.card.info.isVeg === 1));
-    } else if (newFilter === "non-veg") {
-      setItemCardsFiltered(itemCardsFiltered.filter((item) => item.card.info.isVeg !== 1));
-    }
-  };
+  //   if (newFilter === "veg") {
+  //     setItemCardsFiltered(itemCardsFiltered.filter((item) => item.card.info.isVeg === 1));
+  //   } else if (newFilter === "non-veg") {
+  //     setItemCardsFiltered(itemCardsFiltered.filter((item) => item.card.info.isVeg !== 1));
+  //   }
+  // };
 
-  // Function to handle incrementing item count
-  const handleAddClick = (itemId) => {
-    const newCounters = { ...counters };
-    newCounters[itemId] = (newCounters[itemId] || 0) + 1;
-    setCounters(newCounters);
-  };
-
- 
-
-  // Function to handle decrementing item count
-
-  const handleDecrementClick = (itemId) => {
-    if (counters[itemId] > 0) {
-      const newCounters = { ...counters };
-      newCounters[itemId] = newCounters[itemId] - 1;
-      setCounters(newCounters);
-    }
-  };
   // Loading state with Shimmer if resInfo is not available
   if (resInfo === null) {
     return <Shimmer />;

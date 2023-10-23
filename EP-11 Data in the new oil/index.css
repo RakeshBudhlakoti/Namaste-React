@@ -583,9 +583,11 @@ ul {
   margin-left: 11px;
 }
 .strikethrough {
-  text-decoration: line-through;
   color: gray;
   font-weight: normal;
+  text-decoration: line-through;
+  margin-right: 7px;
+  font-size: 12px;
 }
 .menu-item-count {
   width: 124px;
@@ -1236,3 +1238,112 @@ span.bestseller {
 .view-cart-icon {
   margin-left: 10px;
 } */
+
+
+/* App.css */
+
+.appBox {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.appBox .box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.appBox .box-content {
+  width: 100%;
+  text-align: center;
+}
+
+.appBox .button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.appBox button {
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.appBox button:hover {
+  background-color: #0056b3;
+}
+
+.appBox h2 {
+  margin-bottom: 10px;
+}
+
+.appBox input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/** Login */
+
+/* Login.css */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.login-container .login-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.login-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-container label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.login-container button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login-container button:hover {
+  background-color: #0056b3;
+}
