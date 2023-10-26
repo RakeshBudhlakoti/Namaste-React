@@ -3,26 +3,45 @@ import { RESTRA_CDN_URL } from "../../utils/constants";
 import vegImage from "../../images/veg.jpg";
 import nonVegImage from "../../images/non-veg.jpg";
 import defaultFood from "../../images/default-food.jpg";
+import { addItem } from "../../utils/cartSlice";
+import {useDispatch} from "react-redux";
 
 const ItemLists = ({ items }) => {
   // State to manage item counters
   const [counters, setCounters] = useState({});
 
-  // Function to handle the "Add" button click and increment item count
-  const handleAddClick = (itemId) => {
+const dispatch = useDispatch();
+
+  
+  const handleAddClickNew = (itemId,item) => {
     const newCounters = { ...counters };
     newCounters[itemId] = (newCounters[itemId] || 0) + 1;
     setCounters(newCounters);
+    // Dispatch an action
+    dispatch(addItem(item.card.info));
   };
-
   // Function to handle decrementing item count
-  const handleDecrementClick = (itemId) => {
+  const handleDecrementClickNew = (itemId) => {
     if (counters[itemId] > 0) {
       const newCounters = { ...counters };
       newCounters[itemId] = newCounters[itemId] - 1;
       setCounters(newCounters);
     }
   };
+  // Function to handle the "Add" button click and increment item count
+  // const handleAddClick = (itemId) => {
+  //   const newCounters = { ...counters };
+  //   newCounters[itemId] = (newCounters[itemId] || 0) + 1;
+  //   setCounters(newCounters);
+
+  // };
+  // const handleDecrementClick = (itemId) => {
+  //   if (counters[itemId] > 0) {
+  //     const newCounters = { ...counters };
+  //     newCounters[itemId] = newCounters[itemId] - 1;
+  //     setCounters(newCounters);
+  //   }
+  // };
   //let cartItems = [];
   //   items.forEach((item) => {
   //     const itemId = item.card.info.id;
@@ -91,19 +110,19 @@ const ItemLists = ({ items }) => {
               <div className="button-counter">
                 {!counters[item.card.info.id] ? (
                   // If the item count is 0, show an "Add" button
-                  <button onClick={() => handleAddClick(item.card.info.id)}>
+                  <button onClick={() => handleAddClickNew(item.card.info.id,item)}>
                     ADD
                   </button>
                 ) : (
                   // If the item count is greater than 0, show a counter with "+" and "-" buttons
                   <div className="counter">
                     <button
-                      onClick={() => handleDecrementClick(item.card.info.id)}
+                      onClick={() => handleDecrementClickNew(item.card.info.id)}
                     >
                       -
                     </button>
                     <span>{counters[item.card.info.id]}</span>
-                    <button onClick={() => handleAddClick(item.card.info.id)}>
+                    <button onClick={() => handleAddClickNew(item.card.info.id,item)}>
                       +
                     </button>
                   </div>

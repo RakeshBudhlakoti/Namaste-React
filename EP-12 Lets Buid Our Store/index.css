@@ -5,19 +5,79 @@
 .container {
   max-width: 1400px;
   min-width: 1400px;
-  position: relative;
+  /* position: relative; */
   margin: 0 auto;
   padding-top: -2px;
   background: #fff;
 }
 
 
-
-
-
-.logo-container {
-  display: inline-block;
+.logo-container{
+  display: flex; 
+  align-items: center;
 }
+
+
+.location-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-left: 30px;
+  max-width: 300px;
+  height: 30px;
+  cursor: pointer;
+  margin-bottom: -1px;
+  padding-right: 10px;
+}
+
+.location-title {
+  font-weight: 700;
+  color: #3d4152;
+  float: left;
+}
+
+.location-subtitle {
+  display: block;
+  min-width: 30px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.location-title:after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  background: #3d4152;
+}
+
+.location-address {
+  display: block;
+  padding-left: 5px;
+  margin-left: 5px;
+  color: #686b78;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.location-container:hover .location-subtitle {
+  color: #fc8019;
+ 
+}
+
+.location-container:hover .location-title:after {
+  background: #fc8019;
+}
+.location-title, .location-container {
+  position: relative;
+}
+
+
+
 
 .logo {
   width: 50px; /* Set your preferred logo width */
@@ -959,7 +1019,7 @@ span.allDescription {
   flex-shrink: 0;
   margin: 1rem;
   transition: transform 0.3s, opacity 0.3s;
-  position: relative;
+  /* position: relative; */
 }
 .image-scroll-container .image-item:hover {
   transform: scale(1.05);
@@ -992,7 +1052,7 @@ span.allDescription {
 .image-row-container .image-item {
   flex-shrink: 0;
   margin-right: 10px; /* Add margin to separate images */
-  position: relative;
+  /* position: relative; */
   transition: transform 0.3s, opacity 0.3s;
 }
 
@@ -1353,11 +1413,13 @@ span.bestseller {
 
 /* CartPage.css */
 .cart-page {
-  display: flex;
+  background-color: #f7f7f7;
   justify-content: space-between;
   padding: 20px;
   font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
+  display: flex;
+  width: 1100px;
+  margin: 0 auto;
 }
 
 .cart-page .left-block {
@@ -1368,9 +1430,9 @@ span.bestseller {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.cart-page .cart-items {
+/* .cart-page .cart-items {
 
-  margin: -10px; /* Negative margin to remove spacing between items */
+  margin: -10px; 
 }
 
 .cart-page .cart-item {
@@ -1378,8 +1440,8 @@ span.bestseller {
   display: flex;
   border: 1px solid #e0e0e0;
   border-radius: 5px;
-  margin: 10px; /* Margin to create spacing between items */
-}
+  margin: 10px; 
+} */
 
 .cart-page .item-image {
   width: 100px;
@@ -1390,7 +1452,6 @@ span.bestseller {
 
 .cart-page .item-info {
   justify-content: space-between;
-  margin-left: 20px;
   display: flex;
   align-items: center;
 }
@@ -1439,18 +1500,22 @@ span.bestseller {
 }
 
 .cart-page .total-price, .gst-price, .delivery-charge, .grand-total {
-  font-size: 16px;
   margin: 10px 0;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .cart-page .checkout-button {
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  border-radius: 5px;
+  color: #fff;
   cursor: pointer;
+  background-color: #fc8019;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
   font-size: 18px;
+  width: 100%;
+  margin-top: 46px;
 }
 
 ._10-lm {
@@ -1463,7 +1528,6 @@ span.bestseller {
   -ms-flex-direction: column;
   flex-direction: column;
   -ms-flex-pack: center;
-  /* justify-content: center; */
   margin: 0 auto;
   text-align: center;
   background: #fff;
@@ -1520,4 +1584,209 @@ i.fa.fa-shopping-cart {
 ._3pgCg a {
   color: white;
   text-decoration: none;
+}
+
+
+.order-summary {
+  text-align: center;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 400px;
+  float: right;
+}
+
+/* Style for each paragraph (total price, GST, etc.) */
+.order-summary p {
+  margin: 0;
+  font-size: 16px;
+  padding: 5px 0;
+}
+
+/* Styling for the Checkout button */
+.checkout-button {
+  background-color: #0077cc;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.checkout-button:hover {
+  background-color: #0055aa;
+}
+p.grand-total {
+  font-size: 26px;
+  border-top: 4px solid gray;
+  margin-top: 12px;
+}
+
+
+/* Style the cart items table */
+.cart-items {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+/* Style table header row */
+.cart-items thead {
+  background-color: #333;
+  color: #fff;
+}
+
+.cart-items th, .cart-items td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Style even and odd rows for better readability */
+.cart-items tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Style the item image */
+.cart-items .item-image {
+  max-width: 50px;
+  max-height: 50px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* Center align the text in the "Quantity," "Price (₹)," and "Total (₹)" columns */
+/* .cart-items td:nth-child(2), .cart-items td:nth-child(3), .cart-items td:nth-child(4) {
+  text-align: center;
+} */
+
+/* Style the currency symbol */
+/* .cart-items td:nth-child(3)::before,
+.cart-items td:nth-child(4)::before {
+  content: "₹";
+} */
+
+/* Add some spacing to the rows */
+.cart-items tr {
+  margin: 10px 0;
+}
+
+/* Add a border around the table */
+.cart-items {
+  border: 1px solid #ddd;
+}
+
+/* Hover effect on rows */
+.cart-items tbody tr:hover {
+  background-color: #ddd;
+}
+
+/* Sidebar*/
+
+
+
+.sidepanel {
+  z-index: 1;
+  background-color: #f0f0f0;
+  width: 0;
+  height: 250px;
+  padding-top: 60px;
+  transition: all .5s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  box-shadow: 2px 7px 15px 6px gray;
+}
+
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidepanel a:hover {
+  color: #f1f1f1;
+}
+
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+/* Add styles to open the sidepanel */
+.sidepanel.open {
+  width: 710px;
+  height: 100vh;
+}
+input.search-location {
+  color: #000;
+  border-radius: 5px;
+  width: 100%;
+  padding: 17px;
+  font-size: 16px;
+  border: 0px;
+  box-shadow: 0px 1px 6px 1px gray;
+}
+.location-wrapper {
+  width: 85%;
+  margin: 0 auto;
+}
+
+
+.overlay {
+  z-index: 10000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #282c3f;
+  opacity: .7;
+  overflow: hidden;
+}
+
+div#current-location {
+  color: black;
+  display: flex;
+  /* border: 1px solid lightgray; */
+  padding: 10px 13px;
+  margin-top: 18px;
+  box-shadow: 0 1px 6px 1px gray;
+}
+.current-location-detail {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.current-location-icon {
+  display: flex;
+  align-items: center;
+  font-size: 37px;
+}
+span.current-location-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 6px;
 }
