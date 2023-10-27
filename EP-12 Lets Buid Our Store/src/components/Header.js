@@ -4,48 +4,47 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
+import Locations from "./Locations";
+import { useSelector } from "react-redux";
 
 function Header() {
+
+  let address = useSelector((store) => store.latLng.address);
+
   const [btnNameReact, setBtnNameReact] = useState("Login");
 
   // Subscribing to the store using selectors
   const cartItems = useSelector((store) => store.cart.items);
   // console.log("cartItems",cartItems)
 
-  const handleLoginClick = () => {
-    setBtnNameReact(btnNameReact === "Login" ? "Logout" : "Login");
-  };
-
-  const onlineStatus = useOnlineStatus(); // Custom Hook for online status
+  // const handleLoginClick = () => {
+  //   setBtnNameReact(btnNameReact === "Login" ? "Logout" : "Login");
+  // };
+  // const onlineStatus = useOnlineStatus(); // Custom Hook for online status
 
   const { loggedInUser } = useContext(UserContext);
-
 
   const [sidepanelOpen, setSidepanelOpen] = useState(false);
 
   const openSidepanel = () => {
     setSidepanelOpen(true);
   };
-
   const closeSidepanel = () => {
     setSidepanelOpen(false);
   };
-
-
 
   return (
     <div className="header">
       <div className="logo-container">
         <Link to="/">
-          {" "}
           <img className="logo" src={LOGO_URL} alt="FoodVillage" />{" "}
         </Link>
         <div className="location-container" onClick={openSidepanel}>
           <span className="location-title">
-            <span className="location-subtitle">Chhatarpur</span>
+            <span className="location-subtitle">{address.length>0 ? address[0].main_text:''}</span>
           </span>
           <span className="location-address">
-            Chattarpur Enclave, Chhatarpur, New Delhi, Delhi, India
+          {address.length>0?address[0].secondary_text:''}
           </span>
           <span className="location-icon-downArrow">
             <i className="fa fa-angle-down"></i>
@@ -92,28 +91,8 @@ function Header() {
           {/* <li><Link to="#">{loggedInUser}</Link></li> */}
         </ul>
       </div>
-
-
-    {/* <div class="overlay"></div> */}
-    <div className={`sidepanel ${sidepanelOpen ? 'open' : ''}`}>
-        <a href="javascript:void(0)" className="closebtn" onClick={closeSidepanel}>&times;</a>
-        <div className="location-wrapper">
-          <input type="text" className="search-location" placeholder="Search for area, street name.."></input>
-
-          <div className="current-location" id="current-location">
-            <div className="current-location-icon">
-            <i className="fa fa-dot-circle-o" aria-hidden="true"></i>
-
-            </div>
-            <div className="current-location-detail">
-              <span className="current-location-name">Get Current Location</span>
-              <span className="current-location-text">Using GPS</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Locations isOpen={sidepanelOpen} onClose={closeSidepanel} />
     </div>
-    
   );
 }
 

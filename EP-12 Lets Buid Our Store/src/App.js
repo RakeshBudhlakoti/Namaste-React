@@ -7,6 +7,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Login from "./components/Login";
 import Cart from "./components/Restaurant Detail Page/Cart";
+import PaymentSuccess from "./components/PaymentSuccess";
 //import Grocery from "./components/Grocery";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/Restaurant Detail Page/RestaurantMenu";
@@ -85,6 +86,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/payment-success",
+        element: <PaymentSuccess />,
       }
     ],
     errorElement: <Error />,
